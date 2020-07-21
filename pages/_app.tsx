@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { dom } from '@fortawesome/fontawesome-svg-core';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Header';
 import Footer from '../components/Footer';
 import About from '../components/About';
 
@@ -10,9 +10,16 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
+                <title>Elis Offerni</title>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia&display=swap"
                     rel="stylesheet"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="64x64"
+                    href="/favicon.png"
                 />
             </Head>
 
@@ -71,7 +78,7 @@ export default function App({ Component, pageProps }) {
                     justify-content: flex-start;
                     flex-direction: column;
                     align-content: center;
-                    height: calc(100vh - 20px);
+                    min-height: calc(100vh - 20px);
                 }
 
                 .app__bg {
@@ -125,7 +132,7 @@ export default function App({ Component, pageProps }) {
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
-                    margin: 10px;
+                    margin: 30px 10px;
                 }
 
                 @media only screen and (min-width: 768px) {

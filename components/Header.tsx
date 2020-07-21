@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { animateCSS } from './utils';
 
-export default function Sidebar() {
+export default function Header() {
     useEffect(() => {
         animateCSS('.sidebar__avatar-wrapper img', 'bounce');
     }, []);
@@ -99,6 +99,7 @@ export default function Sidebar() {
 
                     .cats {
                         cursor: pointer;
+                        opacity: 0.7;
                     }
 
                     .heart {
