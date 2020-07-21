@@ -71,7 +71,7 @@ export default function App({ Component, pageProps }) {
                     justify-content: flex-start;
                     flex-direction: column;
                     align-content: center;
-                    height: calc(100vh - 20px);
+                    min-height: calc(100vh - 20px);
                 }
 
                 .app__bg {
@@ -125,7 +125,7 @@ export default function App({ Component, pageProps }) {
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
-                    margin: 10px;
+                    margin: 30px 10px;
                 }
 
                 @media only screen and (min-width: 768px) {

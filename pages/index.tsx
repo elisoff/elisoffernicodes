@@ -16,7 +16,7 @@ export default function Home() {
                         icon={faAngleRight}
                         className="animate__animated animate__rotateInDownLeft"
                     />
-                    <span className="animate__animated animate__flipInX">
+                    <span>
                         My resume
                     </span>
                 </a>

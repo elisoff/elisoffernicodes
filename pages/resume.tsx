@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { getResumeFilePdfLink } from '../components/resume-api';
+import { animateCSS } from '../components/utils';
 
 import Link from 'next/link';
 
 export default function Resume() {
     useEffect(() => {
         document.querySelector('.resume-page').scrollIntoView();
+        animateCSS('.resume-page', 'slideInDown');
     }, []);
 
     const handleDownloadClick = () => {
@@ -15,7 +17,7 @@ export default function Resume() {
     };
 
     return (
-        <div className="resume-page">
+        <div className="resume-page animate__fast">
             <Link href="/">
                 <a className="resume-button">
                     <FontAwesomeIcon
@@ -23,12 +25,10 @@ export default function Resume() {
                         className="animate__animated animate__rotateInDownLeft"
                     />
 
-                    <span className="animate__animated animate__flipInX">
-                        My resume
-                    </span>
+                    <span>My resume</span>
                 </a>
             </Link>
-            <div className="resume animate__animated animate__fadeIn">
+            <div className="resume">
                 <div className="resume__container">
                     <div className="resume__iframe">
                         <iframe
