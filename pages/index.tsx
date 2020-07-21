@@ -2,10 +2,16 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
+import ReactGA from 'react-ga';
 
 export default function Home() {
+    const router = useRouter();
+
     useEffect(() => {
         document.querySelector('.resume-button').scrollIntoView();
+
+        ReactGA.pageview(router.asPath);
     }, []);
 
     return (
@@ -16,9 +22,7 @@ export default function Home() {
                         icon={faAngleRight}
                         className="animate__animated animate__rotateInDownLeft"
                     />
-                    <span>
-                        My resume
-                    </span>
+                    <span>My resume</span>
                 </a>
             </Link>
         </>

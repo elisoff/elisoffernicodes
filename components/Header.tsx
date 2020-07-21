@@ -1,17 +1,29 @@
 import React, { useEffect } from 'react';
-import { animateCSS } from './utils';
+import ReactGA from 'react-ga';
+import { animateCSS } from '../utils';
 
 export default function Header() {
     useEffect(() => {
         animateCSS('.sidebar__avatar-wrapper img', 'bounce');
     }, []);
 
-    const handleAvatarOnClick = () =>
+    const handleAvatarOnClick = () => {
         animateCSS('.sidebar__avatar-wrapper img', 'bounce');
+
+        ReactGA.event({
+            category: 'EasterEgg',
+            action: 'avatar-clicked',
+        });
+    };
 
     const handleCatsOnClick = () => {
         animateCSS('.i-love-cats', 'jackInTheBox');
         animateCSS('.heart', 'fadeIn');
+
+        ReactGA.event({
+            category: 'EasterEgg',
+            action: 'cats-clicked',
+        });
     };
 
     return (

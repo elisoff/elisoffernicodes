@@ -3,8 +3,12 @@ import { dom } from '@fortawesome/fontawesome-svg-core';
 import Sidebar from '../components/Header';
 import Footer from '../components/Footer';
 import About from '../components/About';
+import ReactGA from 'react-ga';
+import { useEffect } from 'react';
 
 import 'animate.css';
+
+ReactGA.initialize('UA-165291704-1');
 
 export default function App({ Component, pageProps }) {
     return (
