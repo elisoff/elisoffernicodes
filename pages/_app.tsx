@@ -10,9 +10,16 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
+                <title>Elis Offerni</title>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia&display=swap"
                     rel="stylesheet"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="64x64"
+                    href="/favicon.png"
                 />
             </Head>
 
