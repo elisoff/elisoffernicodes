@@ -2,18 +2,41 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { getResumeFilePdfLink } from '../components/resume-api';
-import { animateCSS } from '../components/utils';
+import { animateCSS } from '../utils';
+
+import { useRouter } from 'next/router';
+import ReactGA from 'react-ga';
 
 import Link from 'next/link';
 
 export default function Resume() {
+    const router = useRouter();
+
     useEffect(() => {
         document.querySelector('.resume-page').scrollIntoView();
         animateCSS('.resume-page', 'slideInDown');
+
+        ReactGA.pageview(router.asPath);
     }, []);
 
     const handleDownloadClick = () => {
-        getResumeFilePdfLink().then((pdfLink) => window.open(pdfLink));
+        getResumeFilePdfLink()
+            .then((pdfLink) => {
+                window.open(pdfLink);
+
+                ReactGA.event({
+                    category: 'DownloadResumeButton',
+                    action: 'click',
+                    label: 'success',
+                });
+            })
+            .catch((error) => {
+                ReactGA.event({
+                    category: 'DownloadResumeButton',
+                    action: 'click',
+                    label: `failed - ${error}`,
+                });
+            });
     };
 
     return (
