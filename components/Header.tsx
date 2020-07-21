@@ -99,6 +99,7 @@ export default function Sidebar() {
 
                     .cats {
                         cursor: pointer;
+                        opacity: 0.7;
                     }
 
                     .heart {

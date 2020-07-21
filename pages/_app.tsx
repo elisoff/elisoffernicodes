@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { dom } from '@fortawesome/fontawesome-svg-core';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Header';
 import Footer from '../components/Footer';
 import About from '../components/About';
 
