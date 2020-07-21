@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9caeaff3-7b2d-41e4-a033-9a542e74ed51/deploy-status)](https://app.netlify.com/sites/romantic-kepler-af1e03/deploys)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
