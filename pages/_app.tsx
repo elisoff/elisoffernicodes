@@ -4,7 +4,6 @@ import Sidebar from '../components/Header';
 import Footer from '../components/Footer';
 import About from '../components/About';
 import ReactGA from 'react-ga';
-import { useEffect } from 'react';
 
 import 'animate.css';
 
@@ -15,6 +14,13 @@ export default function App({ Component, pageProps }) {
         <>
             <Head>
                 <title>Elis Offerni</title>
+                <meta property="og:title" content="Elis Offerni" />
+                <meta
+                    property="og:description"
+                    content="Software engineer in Vancouver"
+                />
+                <meta property="og:image" content="/images/me.jpg" />
+                <meta property="og:url" content="https://elisofferni.codes/" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia&display=swap"
                     rel="stylesheet"
