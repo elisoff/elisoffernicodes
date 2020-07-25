@@ -32,11 +32,6 @@ export default function About() {
                     </p>
                 </div>
             </div>
-            <style jsx>{`
-                .about {
-                    margin: 0 20px 40px 20px;
-                }
-            `}</style>
         </>
     );
 }

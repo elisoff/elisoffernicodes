@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { dom } from '@fortawesome/fontawesome-svg-core';
-import Sidebar from '../components/Header';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
-import About from '../components/About';
 import ReactGA from 'react-ga';
 
 import 'animate.css';
@@ -22,7 +21,7 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:image" content="/images/me.jpg" />
                 <meta property="og:url" content="https://elisofferni.codes/" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Sofia&display=swap"
                     rel="stylesheet"
                 />
                 <link
@@ -36,11 +35,12 @@ export default function App({ Component, pageProps }) {
             <div className="app animated fadeIn">
                 <div className="app__bg"></div>
 
-                <Sidebar />
-                <div className="app__content">
-                    <About />
+                <Header />
+
+                <main className="app__content">
                     <Component {...pageProps} />
-                </div>
+                </main>
+
                 <Footer />
             </div>
 
@@ -108,7 +108,6 @@ export default function App({ Component, pageProps }) {
                     min-width: 360px;
                     max-width: 900px;
                     width: 50%;
-                    margin: 6px;
                     align-self: center;
                 }
 
