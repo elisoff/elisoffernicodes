@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <p>
                 Illustrations by{' '}
                 <a
@@ -11,6 +11,6 @@ export default function Footer() {
                     Icons8
                 </a>
             </p>
-        </div>
+        </footer>
     );
 }

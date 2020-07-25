@@ -13,8 +13,7 @@ export default function Resume() {
     const router = useRouter();
 
     useEffect(() => {
-        document.querySelector('.resume-page').scrollIntoView();
-        animateCSS('.resume-page', 'slideInDown');
+        animateCSS('.resume-page', 'fadeIn');
 
         ReactGA.pageview(router.asPath);
     }, []);
@@ -40,18 +39,9 @@ export default function Resume() {
     };
 
     return (
-        <div className="resume-page animate__fast">
-            <Link href="/">
-                <a className="resume-button">
-                    <FontAwesomeIcon
-                        icon={faAngleDown}
-                        className="animate__animated animate__rotateInDownLeft"
-                    />
-
-                    <span>My resume</span>
-                </a>
-            </Link>
-            <div className="resume">
+        <div className="resume-page">
+            <h1>Resume</h1>
+            <section className="resume">
                 <div className="resume__container">
                     <div className="resume__iframe">
                         <iframe
@@ -72,7 +62,7 @@ export default function Resume() {
                     </span>
                     <span>Download</span>
                 </button>
-            </div>
+            </section>
             <style jsx>
                 {`
                     .resume__container {

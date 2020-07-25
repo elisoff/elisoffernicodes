@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { animateCSS } from '../utils';
+import Link from 'next/link';
+import Menu from './Menu';
 
 export default function Header() {
     useEffect(() => {
-        animateCSS('.sidebar__avatar-wrapper img', 'bounce');
+        animateCSS('.header__avatar-wrapper img', 'bounce');
     }, []);
 
     const handleAvatarOnClick = () => {
-        animateCSS('.sidebar__avatar-wrapper img', 'bounce');
+        animateCSS('.header__avatar-wrapper img', 'bounce');
 
         ReactGA.event({
             category: 'EasterEgg',
@@ -28,8 +30,8 @@ export default function Header() {
 
     return (
         <>
-            <div className="sidebar">
-                <div className="sidebar__avatar-wrapper">
+            <header className="header">
+                <div className="header__avatar-wrapper">
                     <img
                         src="/images/me.jpg"
                         alt="Elis Offerni"
@@ -37,9 +39,9 @@ export default function Header() {
                     />
                 </div>
 
-                <div className="sidebar__text">
+                <div className="header__text">
                     Hi! I'm
-                    <h1 className="sidebar__text-highlight">Elis Offerni</h1>
+                    <h1 className="header__text-highlight">Elis Offerni</h1>
                     <div>
                         I love{' '}
                         <span className="cats" onClick={handleCatsOnClick}>
@@ -70,10 +72,12 @@ export default function Header() {
                         .
                     </p>
                 </div>
-            </div>
+            </header>
+
+            <Menu />
             <style jsx>
                 {`
-                    .sidebar {
+                    .header {
                         margin: 20px 20px;
                         max-width: 300px;
                         align-self: center;
@@ -82,7 +86,7 @@ export default function Header() {
                         z-index: 1;
                     }
 
-                    .sidebar__avatar-wrapper {
+                    .header__avatar-wrapper {
                         background: url('./images/bg2.png') no-repeat center;
                         background-size: contain;
                         margin: 10px;
@@ -90,7 +94,7 @@ export default function Header() {
                         padding: 6px;
                     }
 
-                    .sidebar__avatar-wrapper img {
+                    .header__avatar-wrapper img {
                         border: 10px solid var(--color5);
                         border-radius: 50%;
                         width: 120px;
@@ -98,11 +102,11 @@ export default function Header() {
                         margin: 0 auto;
                     }
 
-                    .sidebar__text {
+                    .header__text {
                         max-width: none;
                     }
 
-                    .sidebar__text-highlight {
+                    .header__text-highlight {
                         margin: 0;
                         color: var(--color2);
                         font-size: 32pt;
@@ -125,19 +129,19 @@ export default function Header() {
                     }
 
                     @media only screen and (min-width: 768px) {
-                        .sidebar {
+                        .header {
                             max-width: none;
                         }
 
-                        .sidebar__avatar-wrapper {
+                        .header__avatar-wrapper {
                             width: 220px;
                         }
 
-                        .sidebar__avatar-wrapper img {
+                        .header__avatar-wrapper img {
                             width: 140px;
                         }
 
-                        .sidebar__text {
+                        .header__text {
                             float: right;
                             max-width: 300px;
                         }
