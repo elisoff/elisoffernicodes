@@ -30,11 +30,16 @@ function ProjectCard({ name, description, imageUrl, links }) {
                 {`
                     .project {
                         flex: 1 1 auto;
-                        min-width: 50%;
-                        max-width: 50%;
+
                         margin: 10px;
                         box-shadow: 0 1px 6px 0 var(--color1);
                         border-radius: 4px;
+                    }
+
+                    @media only screen and (min-width: 768px) {
+                        .project {
+                            max-width: calc(50% - 20px);
+                        }
                     }
 
                     h3 {
