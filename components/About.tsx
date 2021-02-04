@@ -9,7 +9,7 @@ export default function About() {
                     <p>
                         I'm a Brazilian Software Engineer living in Vancouver,
                         Canada. I've been developing software for a living for
-                        7+ years.
+                        9 years.
                     </p>
                     <p>
                         I realized programming was going to be my job when I
